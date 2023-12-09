@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-def get_sum_weight(scores):
-    jk_list = list(map(lambda a: a[1], scores))
-    return sum(jk_list)
+def total_weigh(scores):
+    list_weights = list(map(lambda a: a[1], scores))
+    return sum(list_weights)
 
-def prom(scores):
-    jk_list = list(map(lambda a: a[0] * a[1], scores))
-    return sum(jk_list)
+
+def promedium(scores):
+    list_promediums = list(map(lambda a: a[0] * a[1], scores))
+    return sum(list_promediums)
+
 
 def weight_average(my_list=[]):
     if len(my_list) != 0:
-        average = prom(my_list) / get_sum_weight(my_list)
+        average = promedium(my_list) / total_weigh(my_list)
         return average
-    return 0
+    return 0        
