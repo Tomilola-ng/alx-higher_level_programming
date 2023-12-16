@@ -1,0 +1,6 @@
+#!/bin/bash
+
+find . -type f -name "*.py" -exec chmod u+x {} \;
+
+echo "Executable permissions granted to all .py files."
+
