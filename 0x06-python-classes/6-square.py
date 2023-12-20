@@ -7,15 +7,20 @@ class Square:
     Attributes:
         __size (int): stores size
     """
-    def __init__(self, size=0, position=(0, 0)):
+    def __init__(self, size=0):
         """Check if type is an int
         Args:
             size (int): non-negative values
         Returns:
             None
         """
-        self.size = size
-        self.position = position
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        else:
+            if size < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = size
 
     def area(self):
         """area of square
@@ -48,6 +53,18 @@ class Square:
                 raise ValueError("size must be >= 0")
             else:
                 self.__size = value
+    # def my_print(self):
+    #     """Square printer
+    #     Returns:
+    #         None
+    #     """
+    #     if self.__size == 0:
+    #         print()
+    #         return
+    #     else:
+    #         for i in range(self.__size):
+    #             print("".join(["#" for j in range(self.__size)]))
+
 
     @property
     def position(self):

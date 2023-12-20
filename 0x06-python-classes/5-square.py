@@ -14,7 +14,13 @@ class Square:
         Returns:
             None
         """
-        self.size = size
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        else:
+            if size < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = size
 
     def area(self):
         """area of square
@@ -22,7 +28,7 @@ class Square:
         Returns:
             Area
         """
-        return (self.__size) ** 2
+        return (self.__size * self.__size)
 
     @property
     def size(self):
@@ -50,7 +56,6 @@ class Square:
 
     def my_print(self):
         """Square printer
-
         Returns:
             None
         """

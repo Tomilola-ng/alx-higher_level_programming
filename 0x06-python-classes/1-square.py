@@ -8,11 +8,10 @@ class Square:
         __size (int): parsed size
     """
     def __init__(self, size):
-        """Initializes a square
-
+        """Check if type is an int
         Args:
-            size (int): size of a size of the square
-
-        Returns: None
+            size (int): non-negative values
+        Returns:
+            None
         """
         self.__size = size
