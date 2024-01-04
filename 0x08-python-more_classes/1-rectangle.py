@@ -3,6 +3,7 @@
     Create empty rectangle class
 """
 
+
 class Rectangle:
     """
         An empty rectangle class
@@ -12,7 +13,7 @@ class Rectangle:
         """ Set up rectangle size """
         self.width = width
         self.height = height
-    
+
     @property
     def width(self):
         """ Width getter """
@@ -46,4 +47,3 @@ class Rectangle:
             raise ValueError("height must be >= 0")
 
         self.__height = value
-
