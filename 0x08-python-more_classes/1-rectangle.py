@@ -35,7 +35,8 @@ class Rectangle:
         """ Height getter """
         return self.height
 
-    @height.setter(self, value):
+    @height.setter
+    def height(self, value):
         """ Height Setter """
 
         if not isinstance(value, int):
