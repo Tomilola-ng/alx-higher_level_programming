@@ -74,7 +74,7 @@ class Rectangle:
 
         for i in range(self.__height):
             for j in range(self.__width):
-                hash_str += str(print_symbol)
+                hash_str += str(self.print_symbol)
             hash_str += "\n"
 
         return hash_str
