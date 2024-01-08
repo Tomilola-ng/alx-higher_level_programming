@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Module 0-add_integer
+Contains one method that returns an int sum
+Accepts two values, int or float and casts to int then add
+"""
 
 
 def add_integer(a, b=98):
