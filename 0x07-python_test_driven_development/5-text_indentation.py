@@ -1,22 +1,27 @@
 #!/usr/bin/python3
 """
-Prints text with 2 new lines after each of these characters: ., ? and :
-There should be no space at the beginning or at the end of each printed line
-text must be a string otherwise a typeerror will be raised
+    My Code FUNC
 """
 
 
 def text_indentation(text):
     """
-    Text indentation function
+    Indent text based on punctuation.
+
+    Args:
+    - text: str, the input text
+
+    Raises:
+    - TypeError: if text is not a string
     """
 
     if type(text) is not str:
         raise TypeError("text must be a string")
 
-    for char in ".?:":
-        text = text.replace(char, char + "\n\n")
+    punctuation = ".?:"
+    for char in punctuation:
+        text = text.replace(char, f"{char}\n\n")
 
-    list_lines = [lines.strip(' ') for lines in text.split('\n')]
-    revised = "\n".join(list_lines)
+    lines = [line.strip() for line in text.split('\n')]
+    revised = "\n".join(lines)
     print(revised, end="")
