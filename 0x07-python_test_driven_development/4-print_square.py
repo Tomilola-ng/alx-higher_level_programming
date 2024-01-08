@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 """
-a function that prints a square with the character #
-size is the size length of the square
-size must be an integer
+    My Code FUNC
 """
 
 
 def print_square(size):
     """
-    prints a square shaped character with #
+    # SHAPE PRINTER
     """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
@@ -19,4 +17,11 @@ def print_square(size):
     if size == 0:
         print("", end="")
     else:
-        print("\n".join(["#" * size for rows in range(size)]))
+        hash_str = ""
+
+        for i in range(size):
+            for j in range(size):
+                hash_str += "#"
+            hash_str += "\n"
+
+        print(hash_str)
