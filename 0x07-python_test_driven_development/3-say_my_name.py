@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 """
-a function that prints My name is <first name> <last name>
-The first name must be a string
-The last name must be a string
+    My Code FUNC
 """
 
 
 def say_my_name(first_name, last_name=""):
     """
-    Defining the function name and arguments to be taken
+    FUNC_TAKER
     """
     if type(first_name) is not str:
         raise TypeError("first_name must be a string")
