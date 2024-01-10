@@ -16,6 +16,6 @@ def append_after(filename="", search_string="", new_string=""):
         for line_txt in read_text:
             new_str += line_txt
             if search_string in line_txt
-            new_str += search_string
+            new_str += new_string
 
         write_file.write(new_str)
