@@ -3,11 +3,11 @@
 const { argv } = require('node:process');
 
 function add (a, b) {
-  if (!Number(a) || !Number(b)) {
-    return NaN;
-  }
-
-  return a + b;
+  return (Number(a) + Number(b));
 }
 
-console.log(add(argv[2], argv[3]));
+if (argv.length < 4) {
+  console.log('NaN');
+} else {
+  console.log(add(argv[2], argv[3]));
+}
