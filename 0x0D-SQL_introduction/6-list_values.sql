@@ -1,0 +1,3 @@
+-- lDISPLAY EVERY ROW IN TABLE
+
+SELECT * FROM first_table;
