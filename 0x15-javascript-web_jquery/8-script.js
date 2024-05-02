@@ -1,9 +1,10 @@
-#!/usr/bin/node
-// Write a JavaScript script that fetches and lists the title for all movies by using this URL: https://swapi-api.hbtn.io/api/films/?format=json
-
-const $ = window.$;
-$.get('https://swapi-api.hbtn.io/api/films/?format=json', (data) => {
-  for (const result of data.results) {
-    $('UL#list_movies').append('<li>' + result.title + '</li>');
-  }
+$(document).ready(function () {
+  $.get(
+    "https://swapi-api.alx-tools.com/api/films/?format=json",
+    function (data) {
+      $.each(data.results, function (index, movie) {
+        $("#list_movies").append("<li>" + movie.title + "</li>");
+      });
+    }
+  );
 });
