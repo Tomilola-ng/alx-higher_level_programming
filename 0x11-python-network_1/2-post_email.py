@@ -21,17 +21,14 @@
 """
 
 
-import urllib.parse
 import urllib.request
+import urllib.parse
 import sys
 
-if __name__ == "__main__":
-    url = sys.argv[1]
-    email = sys.argv[2]
+if __name__ == '__main__':
+    DATA = urllib.parse.urlencode({'email': sys.argv[2]}).encode('ascii')
+    req = urllib.request.Request(sys.argv[1], DATA)
 
-    DATA = urllib.parse.urlencode({'email': email}).encode('utf-8')
-
-    # Make the POST request
-    with urllib.request.urlopen(url, DATA) as response:
-        response_body = response.read().decode('utf-8')
-        print(response_body)
+    with urllib.request.urlopen(req) as r:
+        html = r.read()
+        print(f"{format(html.decode('utf-8'))}")
