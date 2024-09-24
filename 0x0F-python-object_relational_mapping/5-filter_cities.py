@@ -10,7 +10,7 @@ from sys import argv
 if __name__ == '__main__':
     # Ensure the correct number of arguments is provided
     if len(argv) != 5:
-        print("Usage: ./script.py <mysql username> <mysql password> <database> <state name>")
+        print("Usage: ./script.py <mysql username> <mysql password> <database> <state name>")  # noqa: E501
         exit(1)
 
     # Connect to the database
