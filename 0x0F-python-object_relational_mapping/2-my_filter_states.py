@@ -16,9 +16,9 @@ if __name__ == '__main__':
     # Create a cursor object to interact with the database
     cur = db.cursor()
 
-    # Use parameterized query to prevent SQL injection
-    query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC"
-    cur.execute(query, (argv[4],))
+    # Use the format method to create the SQL query
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC".format(argv[4])
+    cur.execute(query)
 
     # Fetch and print each result
     rows = cur.fetchall()
