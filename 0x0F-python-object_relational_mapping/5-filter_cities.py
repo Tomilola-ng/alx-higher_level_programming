@@ -8,6 +8,11 @@ import MySQLdb
 from sys import argv
 
 if __name__ == '__main__':
+    # Ensure the correct number of arguments is provided
+    if len(argv) != 5:
+        print("Usage: ./script.py <mysql username> <mysql password> <database> <state name>")
+        exit(1)
+
     # Connect to the database
     db = MySQLdb.connect(
         host="localhost",
@@ -20,7 +25,7 @@ if __name__ == '__main__':
     # Use context manager to handle cursor
     with db.cursor() as cur:
         cur.execute("""
-            SELECT cities.id, cities.name
+            SELECT cities.name
             FROM cities
             JOIN states ON cities.state_id = states.id
             WHERE states.name LIKE BINARY %(state_name)s
@@ -29,6 +34,8 @@ if __name__ == '__main__':
 
         rows = cur.fetchall()
 
-    # Print city names if rows exist
+    # Print city names or a message if no cities found
     if rows:
-        print(", ".join([row[1] for row in rows]))
+        print(", ".join([row[0] for row in rows]))
+    else:
+        print("No cities found.")

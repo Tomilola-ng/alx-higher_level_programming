@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+# noqa W291
 """
 This script takes in an argument and
 displays all values in the states table
