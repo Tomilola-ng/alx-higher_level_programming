@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-    Rectangle 
+    Rectangle
 """
 
 Rectangle = __import__('9-rectangle').Rectangle
