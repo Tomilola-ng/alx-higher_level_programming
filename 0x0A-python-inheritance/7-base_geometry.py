@@ -16,7 +16,7 @@ class BaseGeometry:
         """
             Checks if value is an integer
         """
-        if type(value) != int: # noqa: E721
+        if type(value) != int:  # noqa: E721
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
