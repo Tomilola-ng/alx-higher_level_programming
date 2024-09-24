@@ -17,7 +17,7 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     # Use the format method to create the SQL query
-    query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC".format(argv[4])
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC".format(argv[4])  # noqa: E501
     cur.execute(query)
 
     # Fetch and print each result
